@@ -16,7 +16,7 @@ public class Game : MonoBehaviour
     public string[] items;
     public float gameSpeed = 1;
 
-    private bool isGameOver = false;
+    public bool isGameOver = false;
 
     private void Awake()
     {
@@ -47,8 +47,6 @@ public class Game : MonoBehaviour
 
     private void GameOver() {
         this.isGameOver = true;
-        // Should destroy class/change scene or something here.
-        Destroy(this);
     }
 
     public void HydrateAmmount(double ammount) {
@@ -68,7 +66,7 @@ public class Game : MonoBehaviour
     }
 
     public bool Buy(double price) {
-        if(sweat > price) {
+        if(sweat > price && !isGameOver) {
             sweat -= price;
             return true;
         }
