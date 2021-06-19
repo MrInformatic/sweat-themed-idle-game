@@ -15,6 +15,6 @@ public class Sweat : MonoBehaviour
 
     void Update()
     {
-        SweatText.text = "Sweat: " + game.sweat + " Liters"; 
+        SweatText.text = game.sweat + " Liters"; 
     }
 }
