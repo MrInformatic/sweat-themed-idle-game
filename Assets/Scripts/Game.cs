@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
@@ -52,6 +53,12 @@ public class Game : MonoBehaviour
 
     private void GameOver() {
         this.isGameOver = true;
+        Invoke("RestartGame", 8);
+    }
+
+    private void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void HydrateAmmount(double ammount) {
