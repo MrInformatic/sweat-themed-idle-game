@@ -8,6 +8,7 @@ public class HydrateButton : MonoBehaviour
     private Button hydrateButton;
 
     public double hydrateAmmount;
+    public double price;
     public Game Game;
 
     void Start()
@@ -16,9 +17,10 @@ public class HydrateButton : MonoBehaviour
         hydrateButton.onClick.AddListener(Hydrate);
     }
 
-    // Update is called once per frame
     void Hydrate()
     {
-        Game.HydrateAmmount(hydrateAmmount);
+        if(Game.Buy(price)) {
+            Game.HydrateAmmount(hydrateAmmount);
+        }
     }
 }
