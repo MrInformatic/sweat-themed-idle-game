@@ -11,6 +11,8 @@ public class Game : MonoBehaviour
     public double sweat = 0;
     public double baseTemperature = 20;
     public double temperature = 30;
+    public double autoHydration = 0;
+    public double autoHeating = 0;
     public string[] items;
     public float gameSpeed = 1;
 
@@ -22,9 +24,13 @@ public class Game : MonoBehaviour
     }
 
     private void GameTick() {
+        this.temperature += autoHeating;
+
         double sweatSpeed = GetSweatSpeed();
         this.hydration -= sweatSpeed;
         this.sweat += sweatSpeed;
+
+        this.hydration = Math.Min(this.hydration + autoHydration, maxHydration);
 
         if (this.IsGameEnding()) {
             this.GameOver();
@@ -47,5 +53,25 @@ public class Game : MonoBehaviour
 
     public void HydrateAmmount(double ammount) {
         this.hydration = Math.Min(this.hydration + ammount, this.maxHydration);
+    }
+
+    public void AutoHydrateAmmount(double ammount) {
+        this.autoHydration += ammount;
+    }
+
+    public void HeatAmmount(double ammount) {
+        this.temperature += ammount;
+    }
+
+    public void AutoHeatAmmount(double ammount) {
+        this.autoHeating += ammount;
+    }
+
+    public bool Buy(double price) {
+        if(sweat > price) {
+            sweat -= price;
+            return true;
+        }
+        return false;
     }
 }
