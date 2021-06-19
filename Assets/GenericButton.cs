@@ -16,7 +16,7 @@ public class GenericButton : MonoBehaviour, IPointerDownHandler
     {
         float time = 0;
         float startValue = scaleModifier;
-        Vector3 startScale = transform.localScale;
+        Vector3 startScale = new Vector3(1.0f, 1.0f, 1.0f);
 
         while (time < duration)
         {
