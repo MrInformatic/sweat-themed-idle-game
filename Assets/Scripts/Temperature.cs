@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Temperature : MonoBehaviour
 {
     private Text TemperaturText;
-    public int TemperaturValue = 40;
+    public Game game;
 
     void Start()
     {
@@ -15,6 +15,6 @@ public class Temperature : MonoBehaviour
 
     void Update()
     {
-        TemperaturText.text = TemperaturValue + "C"; 
+        TemperaturText.text = game.temperature + "C"; 
     }
 }

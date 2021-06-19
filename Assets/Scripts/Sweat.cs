@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Sweat : MonoBehaviour
 {
     private Text SweatText;
-    public int SweatLevel;
+    public Game game;
 
     void Start() 
     {
@@ -15,6 +15,6 @@ public class Sweat : MonoBehaviour
 
     void Update()
     {
-        SweatText.text = "Sweat: " + SweatLevel + " Liters"; 
+        SweatText.text = "Sweat: " + game.sweat + " Liters"; 
     }
 }

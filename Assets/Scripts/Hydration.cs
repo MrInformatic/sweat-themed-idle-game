@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Hydration : MonoBehaviour
 {
-    public Slider HydraionSlider;
+    private Slider HydraionSlider;
+    public Game game;
     
     void Start()
     {
@@ -14,6 +15,7 @@ public class Hydration : MonoBehaviour
 
     void Update()
     {
-        
+        HydraionSlider.value = (float) game.hydration;
+        HydraionSlider.maxValue = (float) game.maxHydration;
     }
 }
