@@ -23,6 +23,11 @@ public class Game : MonoBehaviour
         InvokeRepeating("GameTick", 0.0f, gameSpeed);
     }
 
+    private void Update()
+    {
+        maxHydration = (temperature - baseTemperature) / 4.0;
+    }
+
     private void GameTick() {
         this.temperature += autoHeating;
 
