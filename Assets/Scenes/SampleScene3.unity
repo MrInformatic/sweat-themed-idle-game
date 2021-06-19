@@ -10856,7 +10856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heatingAmmount: 20
   price: 1
-  Game: {fileID: 0}
+  Game: {fileID: 704018839}
 --- !u!114 &296428848
 MonoBehaviour:
   m_ObjectHideFlags: 0
